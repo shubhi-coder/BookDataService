@@ -1,0 +1,39 @@
+class BookServiceFormOptimized2 extends Component
+{
+    state={
+       query:"",
+       
+    };
+
+    handleChange=(event)=>{
+        
+        this.setState({
+            event.target.value
+        });      
+    };
+
+  handleSubmit = event=>{
+        event.preventDefault();
+     //either call that component having the fetching code or make a function within the same component.
+    //axios.get would be better
+// change the localhost port no. in your appsettings.js in vs 2017
+    }
+
+render()
+    {
+        return (
+            <form  onSubmit={this.handleSubmit}>
+        <p>
+          <div>
+  <fieldset align="center">  SearchExpress  </fieldset>      
+            <input 
+                name="searchquery"
+                placeholder="search..."
+                value ={this.state.name} 
+                onChange={
+                    this.handleChange}/>
+                    </div>
+                    </p> 
+ <button type ="submit">Search</button>
+            
+            </form>
