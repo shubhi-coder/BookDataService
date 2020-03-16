@@ -1,0 +1,27 @@
+//after clicking search button
+
+class search extends component{
+ state =
+  {searchdata:[]},
+   searchquery:""
+
+componentdidmount()
+{axios.get('../${this.state.searchquery}')
+.then(res=>{
+this.setState({searchdata:res.data});
+});
+}
+
+render(){
+return(
+<ul>{this.state.searchdata.map(searcheddata=>(
+<li key={searcheddata.id}>
+{searcheddata.area}
+{searcheddata.tags}
+{searcheddata.likes}</li>
+))}
+</ul>
+);
+
+
+}
